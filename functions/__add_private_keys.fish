@@ -1,3 +1,1 @@
-function __add_private_keys
-    ssh-add (ls ~/.ssh/id* | grep -v "\.pub") > /dev/null
-end
+__add_keys (__list_public_keys $HOME/.ssh/)
