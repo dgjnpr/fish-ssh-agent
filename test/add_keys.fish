@@ -20,14 +20,14 @@ test "$TEST - Fail if `keys` list is empty"
 end
 
 test "$TEST - Add a given key"
-  (
-      eval (ssh-agent -c) > /dev/null
-      set old_keys_list (ssh-add -l | grep --count RSA)
-      ssh-keygen -f $path/.test -N '' >/dev/null
+    (
+        eval (ssh-agent -c) > /dev/null
+        set old_keys_list (ssh-add -l | grep --count RSA)
+        ssh-keygen -f $path/.test -N '' >/dev/null
 
-      __add_keys $path/.test.pub
+        __add_keys $path/.test.pub
 
-      set new_keys_list (ssh-add -l | grep --count RSA)
-      math "$new_keys_list - $old_keys_list"
+        set new_keys_list (ssh-add -l | grep --count RSA)
+        math "$new_keys_list - $old_keys_list"
     ) = 1
 end
