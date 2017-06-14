@@ -6,7 +6,7 @@ function setup
 end
 
 function teardown
-	rm $path -rf
+	rm -rf $path
 end
 
 test "$TEST - Fail if SSH directory argument is missing"
