@@ -7,6 +7,7 @@ end
 
 function teardown
 	rm -rf $path
+    ssh-agent -k
 end
 
 test "$TEST - Fail if SSH directory argument is missing"
