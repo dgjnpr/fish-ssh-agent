@@ -18,7 +18,7 @@ end
 
 test "$TEST - Silent if no public key in directory"
     (
-        echo ( __list_public_keys $path | wc -l )
+        echo ( __list_public_keys $path | wc -l | sed 's#^ *##g' )
     ) = 0
 end
 
@@ -26,6 +26,6 @@ test "$TEST - List only *.pub files"
     (
         touch $path/key
         touch $path/key1.pub $path/key2.pub
-        echo ( __list_public_keys $path | wc -l )
+        echo ( __list_public_keys $path | wc -l | sed 's#^ *##g' )
     ) = 2
 end
