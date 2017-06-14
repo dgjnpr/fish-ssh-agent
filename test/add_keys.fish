@@ -10,7 +10,9 @@ end
 
 function teardown
     rm -rf $path
-    ssh-agent -k
+    if set -q $SSH_AGENT_PID
+        ssh-agent -k
+    end
 end
 
 test "$TEST - Fail if `keys` list is empty"
