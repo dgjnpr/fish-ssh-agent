@@ -1,7 +1,5 @@
-set ssh_agent_pid (pgrep ssh-agent)
-
-if count $ssh_agent_pid >= 1
-    __test_ssh_identities
+if test -f $HOME/.ssh/environment
+    __connect_to_ssh_agent
 else
     __start_ssh_agent
 end
