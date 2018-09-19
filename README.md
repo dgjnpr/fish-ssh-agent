@@ -10,7 +10,7 @@ Autostart ssh-agent function for fish.
 With [Fisherman](https://github.com/fisherman/fisherman):
 
 ```bash
-fisher i dgjnpr/ssh-agent
+fisher i dgjnpr/fish-ssh-agent
 ```
 
 ## Description
@@ -22,6 +22,12 @@ Automatically starts up `ssh-agent` if it's not already running, adding all iden
 ```bash
 fisher i dgjnpr/fish-ssh-agent
 ```
+
+## Starting 
+
+`fish-ssh-agent` should start automatically and add your private keys.
+
+`fish-ssh-agent` checks if `~/.ssh/environment` exists. It may already be present if you used a different `ssh-agent` plugin that did not shut down properly. Delete this file for `fish-ssh-agent` to start correctly.
 
 ### Test
 
